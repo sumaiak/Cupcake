@@ -1,6 +1,7 @@
 package app;
 
 import app.config.ThymeleafConfig;
+import app.controllers.UserController;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
@@ -28,6 +29,12 @@ public class Main {
 
         // Routing
 
-        app.get("/", ctx ->  ctx.render("index.html"));
+
+        //Når man besøger hjemmesiden skal index siden renderes.
+        app.get("/", ctx -> ctx.render("index.html"));
+
+        app.get("/createuser", ctx -> ctx.render("createuser.html"));
+        // Når der klikkes på createuser, følges denne rute:
+        app.post("/createuser", ctx -> UserController.createUser(ctx, connectionPool));
     }
 }

@@ -6,12 +6,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
 </head>
-
 <body>
+<header>
 
-<h1>Welcome to the Javalin / Thymeleaf demo</h1>
+</header>
 
-<p>This is your first web application in this world</p>
+<div id="nav">
+    <ul id="main-menu">
+        <li>Order</li>
+        <li>Kunder</li>
+        <li>jobe@cphbusimess.dk</li>
+        <li>Log ud</li>
+    </ul>
+
+</div>
+
+
+<img src="../../../cupcakes-row-wooden-table-closeup-67723355.jpg"  width="100%" height = 50%/>
+<div id="content">
+    <h1>Welcome to Olsker Cupcake </h1>
+    <h2></h2>
+    <form id="dropdowns" action="cart.html" method="get">
+        <select name="bottom" id="bottom">
+            <option value="1">Chocolate 5kr </option>
+            <option value="2">Vanilla 5kr</option>
+            <option value="3">Nutmeg 5kr</option>
+            <option value="4">Pistacio 6kr</option>
+            <option value="5">Almond 7 kr</option>
+
+
+
+        </select>
+        <select name="top" id="top">
+            <option value="1">Chocolate 5kr</option>
+            <option value="2">Blueberry 5kr</option>
+            <option value="3">Rasberry 5kr</option>
+            <option value="4">Crispy 6kr</option>
+            <option value="5">Strawberry 6kr</option>
+            <option value="6">Rum/Raisin 7kr</option>
+            <option value="7">Orange 8kr</option>
+            <option value="8">Lemon 8kr</option>
+            <option value="9">Blue cheese 9kr</option>
+
+
+        </select>
+        <select name="antal" id="antal">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">2</option>
+
+
+
+        </select>
+        <button type="submit"> Læg i kurv</button>
+    </form>
+</div>
 
 </body>
 </html>
