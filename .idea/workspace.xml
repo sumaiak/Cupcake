@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="241dd27b-af7f-4958-aa9a-e29faa255d80" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/config/ThymeleafConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/Exception/DatabaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/persistence/ConnectionPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/persistence/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1698133771821</updated>
       <workItem from="1698133772872" duration="125000" />
-      <workItem from="1698134094153" duration="610000" />
+      <workItem from="1698134094153" duration="3181000" />
     </task>
     <servers />
   </component>
