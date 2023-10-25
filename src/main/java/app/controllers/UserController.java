@@ -33,4 +33,25 @@ public class UserController {
             ctx.render("createuser.html");
         }
     }
+
+    public static void login(Context ctx , ConnectionPool connectionPool){
+
+        String username  = ctx.formParam("username");
+        String password  = ctx.formParam("password");
+        try {
+            User user = UserMapper.login(username, password, connectionPool);
+            ctx.sessionAttribute("currentUser", user);
+
+
+            //I attribute gemmer vi et listen over tasks i varibale "tasks"
+         //   ctx.attribute();
+            ctx.render("login.html");
+        } catch (DatabaseException e) {
+            ctx.attribute("message", e.getMessage());
+            ctx.render("index.html");
+        }
+
+
+
+    }
 }

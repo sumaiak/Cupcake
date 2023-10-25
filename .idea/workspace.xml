@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="241dd27b-af7f-4958-aa9a-e29faa255d80" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/persistence/OrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/createuser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3104047a-f0cb-488d-a21f-4938514c7a9c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3104047a-f0cb-488d-a21f-4938514c7a9c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="241dd27b-af7f-4958-aa9a-e29faa255d80" name="Changes" comment="add">
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/controllers/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entities/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entities/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/app/entities/OrderLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/1000_F_257919443_wJYmsuMOLfVKQIeWXA4gcFY4udRfh5qU.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cupcakes-row-wooden-table-closeup-67723355.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/persistence/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/persistence/OrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createuser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createuser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,6 +65,19 @@
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.Main" />
+      <module name="app-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Cupcake" />
       <method v="2">
@@ -74,6 +91,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -86,9 +108,31 @@
       <workItem from="1698133772872" duration="125000" />
       <workItem from="1698134094153" duration="3181000" />
     </task>
+    <task id="LOCAL-00001" summary="userstory2">
+      <option name="closed" value="true" />
+      <created>1698145997805</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698145997806</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add">
+      <option name="closed" value="true" />
+      <created>1698146035457</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698146035457</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="userstory2" />
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
 </project>

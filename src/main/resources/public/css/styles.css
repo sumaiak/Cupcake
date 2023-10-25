@@ -1,6 +1,25 @@
 
-Signe Kjær Brandt Hau
-    /*Nav -bar*/
+header{
+    background-color: #f0f0f0;
+    width: 100%;
+    position: fixed;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+    .logo{
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+
+    }/*Nav -bar*/
+.navigation a{
+    text-transform: uppercase;
+    text-decoration: none;
+}
 
 #nav{
     padding: 10px;
