@@ -1,6 +1,7 @@
 package app;
 
 import app.config.ThymeleafConfig;
+import app.controllers.CartController;
 import app.controllers.UserController;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
@@ -36,5 +37,6 @@ public class Main {
         app.get("/createuser", ctx -> ctx.render("createuser.html"));
         // Når der klikkes på createuser, følges denne rute:
         app.post("/createuser", ctx -> UserController.createUser(ctx, connectionPool));
+        app.post("/cart",ctx-> CartController.addToCart(ctx, connectionPool));
     }
 }
