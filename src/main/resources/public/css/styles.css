@@ -1,6 +1,7 @@
 
 header{
-    background-color: #f0f0f0;
+    background-color: white;
+
     width: 100%;
     position: fixed;
     display : flex;
@@ -12,14 +13,32 @@ header{
 }
     .logo{
         text-decoration: none;
-        color: black;
+        color: hotpink;
         text-transform: uppercase;
+        padding : 10px;
+
 
     }/*Nav -bar*/
 .navigation a{
     text-transform: uppercase;
     text-decoration: none;
+    padding: 10px;
+    margin : 10px;
+    color:hotpink;
 }
+h1 {
+    font-size: 3rem;
+    color: pink;
+    text-align: center;
+    font-style: italic;
+}
+#f{
+    font-style: italic;
+    color: darkgray;
+}
+
+
+
 
 #nav{
     padding: 10px;
@@ -56,19 +75,25 @@ header{
     padding: 5px;
     flex-grow: 1;
 }
+/* CSS for styling the footer */
+footer {
+
+    bottom: 0;
+    right: 0;
+    background-color: #f8f8f8;
+    padding: 20px;
+
+}
+
+/* Style for the contact section inside the footer */
+#contact {
+    text-align: right;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
 
 /*Text styles */
 
-h1{
-    font-size: 5rem;
-    color: black ;
-    background-color: darkturquoise;
-}
 
-h2{
-    font-size: 3rem;
-}
 
-p{
-
-}

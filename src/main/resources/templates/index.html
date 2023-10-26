@@ -5,27 +5,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
-    <a href="f" class ="logo">Cupcake </a>
+    <a href="index.html" class ="logo">Cupcake </a>
 
        <nav class = "navigation">
-           <li>
-            <a href="">  login </a>
-            <a href="">  sign up </a>
-            <a href="">  Contact  </a>
-               <span th:if="${#ctx.session.cart != null}" th:text="${'Kurv (' + #ctx.session.cart.cartsize + ')'}">0</span>
-        </nav>
 
+                   <a href="login.html">Login</a>
+                   <a href="createuser.html">Sign up</a>
+                   <a href="#contact">Contact</a>
+               <span th:if="${#ctx.session.cart != null}" th:text="${' (' + #ctx.session.cart.cartsize + ')'}">0</span>
+                   <a href=""><i class="fa fa-shopping-cart"></i></a>
+
+
+
+       </nav>
 
 </header>
 
 
-<img src="../../cupcakes-row-wooden-table-closeup-67723355.jpg" width="100%"/>
+<img src="../../berry-glazing_1098-15023.jpg" height="500" width="100%"/>
 <div id="content">
-    <h1>Welcome to Olsker Cupcake </h1>
-    <h2></h2>
+    <h1>Welcome to <span id = f> Olsker </span>  Cupcake </h1>
+<section class = "par">
+    <p>
+
+    </p>
+
+
+
+</section>
     <form id="dropdowns" action="/cart" method="post">
         <select name="bottom" id="bottom">
             <option value="1">Chocolate 5kr </option>
@@ -37,7 +48,7 @@
 
 
         </select>
-        <select name="top" id="top">
+        <select name="top" id="top" th:>
             <option value="1">Chocolate 5kr</option>
             <option value="2">Blueberry 5kr</option>
             <option value="3">Rasberry 5kr</option>
@@ -63,7 +74,15 @@
         </select>
         <button type="submit"> Læg i kurv</button>
     </form>
+<footer>
+    <section id="contact">
+        <p>Customer Service info</p><br>
+        <p>Email : skdk1295@gmail.com</p><br>
+        <p>Phone Number:4562134 </p>
 
+    </section>
+
+</footer>
 
 </div>
 

@@ -9,28 +9,22 @@
 </head>
 
 <body>
-<div id="content">
-    <div id="navbar">
-        <div>
-            <img src="../public/images/fourthingsplus.png" th:src="@{/images/fourthingsplus.png}" width="300px"/>
-        </div>
-        <ul class="main-menu">
-            <li class="button"><a href="/">Home</a></li>
-            <!-- <li class="button"><a href="/">Create Account</a></li> -->
-        </ul>
+<img src="../../berry-glazing_1098-15023.jpg" height="500" width="100%"/>
+
+<
     </div>
     <h1>Create user</h1>
-    <form id="form" method="post">
+    <form id="form" method="post" action="index.html ">
         <h3>Fill the form</h3>
         <input type="text" name ="name"  placeholder="name" /><br>
         <input type="text" name="username" placeholder="username"/><br>
         <input type="password" name="password1" placeholder="password"/><br>
         <input type="password" name="password2" placeholder="re-enter password"/><br>
-        <button id="login_button" type="submit" formaction="/createuser">Create user</button>
+        <button id="login_button" type="submit" >Create user</button>
         <br>
         <p class="errormessage" th:text="${#ctx.message}"></p>
     </form>
-    <a href="/" class="button">Return to main page</a>
+    <a href="index.html" class="button">Return to main page</a>
 </div>
 
 </body>

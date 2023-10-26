@@ -1,5 +1,8 @@
 package app.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderLine {
     private int orderline_id;
     private int bottomId;
@@ -20,6 +23,9 @@ public class OrderLine {
         return orderline_id;
     }
 
+
+
+
     public void setOrderline_id(int orderline_id) {
         this.orderline_id = orderline_id;
     }
@@ -39,6 +45,7 @@ public class OrderLine {
     public void setToppingId(int toppingId) {
         this.toppingId = toppingId;
     }
+
 }
 
 

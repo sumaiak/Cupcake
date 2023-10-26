@@ -5,16 +5,16 @@
     <title>Cupcake/log-in</title>
 </head>
 <body>
-<form id="form" method="post">
-    <h3>Login</h3>
+<img src="../../berry-glazing_1098-15023.jpg" height="500" width="100%"/>
+<form id="form" method="post" action ="index.html">
+    <h3 >Login</h3>
     <input type="text" name="username" placeholder="username"/>
     <input type="password" name="password" placeholder="password"/>
-    <button id="login_button" type="submit" formaction="/login">Submit </button>
+    <button id="login_button" type="submit">Submit </button>
     <p class="errormessage" th:text="${#ctx.message}"></p>
 </form>
 <!-- her er /createuser et route. dvs når der klikkes på linket så skal den dirigere til undersiden
  create user. i Main laver man en route til denne som fortæller hvad der skal gøres når der klikkes på linket-->
-<a href="/createuser½" class="button">Create account</a>
 </div>
 </body>
 </html>
