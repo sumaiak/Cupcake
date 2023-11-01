@@ -29,6 +29,7 @@ public class CartController {
             cart = new Cart();
         }
         cart.addtocart(orderLine);
+
         ctx.sessionAttribute("cart", cart);
         ctx.render("index.html");
 
@@ -36,20 +37,33 @@ public class CartController {
 
     public static void showcart(Context ctx, ConnectionPool connectionPool) {
         User user = ctx.sessionAttribute("login");
+        try {
+            if (user == null) {
+                // User is not logged in, redirect to login page
+                ctx.redirect("/login"); // Replace "/login" with the actual URL of your login page
+                return;
+            }
 
-        List<Bottom> bottoms = ctx.sessionAttribute("bottoms");
-        List<Topping> toppings = ctx.sessionAttribute("toppings");
+            List<Bottom> bottoms = ctx.sessionAttribute("bottoms");
+            List<Topping> toppings = ctx.sessionAttribute("toppings");
 
-        Map<Integer, Topping> toppingMap = toppings.stream()
-                .collect(Collectors.toMap(Topping::getTopID, topping -> topping));
-        Map<Integer, Bottom> bottomMap = bottoms.stream()
-                .collect(Collectors.toMap(Bottom::getBottomId, topping -> topping));
 
-        ctx.sessionAttribute("toppings", toppings);
-        ctx.sessionAttribute("bottoms", bottoms);
-        ctx.sessionAttribute("toppingmap", toppingMap);
-        ctx.sessionAttribute("bottomMap", bottomMap);
 
-        ctx.render("cart.html");
+            Map<Integer, Topping> toppingMap = toppings.stream()
+                    .collect(Collectors.toMap(Topping::getTopID, topping -> topping));
+            Map<Integer, Bottom> bottomMap = bottoms.stream()
+                    .collect(Collectors.toMap(Bottom::getBottomId, topping -> topping));
+
+
+
+            ctx.sessionAttribute("toppings", toppings);
+            ctx.sessionAttribute("bottoms", bottoms);
+            ctx.sessionAttribute("toppingmap", toppingMap);
+            ctx.sessionAttribute("bottomMap", bottomMap);
+
+            ctx.render("cart.html");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
