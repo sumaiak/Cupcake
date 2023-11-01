@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="dataSourceStorageLocal" created-in="IU-232.9921.47">
+  <component name="dataSourceStorageLocal" created-in="IU-223.8617.56">
     <data-source name="Cupcake@localhost" uuid="3104047a-f0cb-488d-a21f-4938514c7a9c">
       <database-info product="PostgreSQL" version="15.3 (Debian 15.3-1.pgdg120+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="15.3" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
@@ -9,8 +9,8 @@
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="Cupcake">
-            <node kind="schema" negative="1" />
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
           </node>
         </introspection-scope>
       </schema-mapping>
