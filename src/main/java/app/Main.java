@@ -2,6 +2,7 @@ package app;
 
 import app.config.ThymeleafConfig;
 import app.controllers.CartController;
+import app.controllers.OrderController;
 import app.controllers.UserController;
 import app.persistence.ConnectionPool;
 import io.javalin.Javalin;
@@ -19,25 +20,35 @@ public class Main {
 
 
 
-    public static void main(String[] args)
-
-    {
+    public static void main(String[] args) {
         // Initializing Javalin and Jetty webserver
 
         Javalin app = Javalin.create(config -> {
             config.staticFiles.add("/public");
             JavalinThymeleaf.init(ThymeleafConfig.templateEngine());
-        }).start(7078);
+        }).start(7072);
 
         // Routing
 
 
         //Når man besøger hjemmesiden skal index siden renderes.
-        app.get("/", ctx -> ctx.render("index.html"));
+        // indlæser info fra database controller og render ind i funktionen er der render
 
+            app.get("/", ctx -> OrderController.allBottomsAndToppings(ctx, connectionPool));
+        //create user is just the name of the file  without, url the "router" we dont rint html just  the name of the webiste like create user
+        //html.extension
         app.get("/createuser", ctx -> ctx.render("createuser.html"));
         // Når der klikkes på createuser, følges denne rute:
         app.post("/createuser", ctx -> UserController.createUser(ctx, connectionPool));
-        app.post("/cart",ctx-> CartController.addToCart(ctx, connectionPool));
+        app.get("/login", ctx -> ctx.render("login.html"));
+        app.post("/login", ctx -> UserController.login(ctx, connectionPool));
+        app.post("/cart", ctx -> CartController.addToCart(ctx, connectionPool));
+        app.get("/cart",ctx-> CartController.showcart(ctx,connectionPool));
     }
+
+
+
+
+
+
 }

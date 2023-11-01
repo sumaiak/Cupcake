@@ -22,8 +22,10 @@ public class Order {
     }
 
     public void addtoOrderLine(OrderLine item) {
+
         orderlist.add(item);
     }
+
         public int getOrder_id () {
             return order_id;
         }
@@ -65,4 +67,15 @@ public class Order {
     public void setOrderlist(List<OrderLine> orderlist) {
         this.orderlist = orderlist;
     }
+    public void calculateTotalPrice() {
+
+        for (OrderLine orderLine : orderlist) {
+           int  totalprice =+  orderLine.getpricePerQuantity();
+
+        }
+
+    }
+
+
 }
+

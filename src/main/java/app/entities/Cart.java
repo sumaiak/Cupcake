@@ -8,6 +8,7 @@ public class Cart {
 
     public void addtocart( OrderLine item){
         cart.add(item);
+        System.out.println(cart);
 
     }
 

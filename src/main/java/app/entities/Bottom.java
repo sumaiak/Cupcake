@@ -2,20 +2,25 @@ package app.entities;
 
 public class Bottom {
     int bottomId;
-    String bottom;
+    String name;
     int price;
 
-    public Bottom(String bottom, int price) {
-        this.bottom = bottom;
+    public Bottom(int bottomId,String bottom, int price) {
+        this.bottomId = bottomId;
+        this.name = bottom;
         this.price = price;
     }
 
-    public String getBottom() {
-        return bottom;
+    public int getBottomId() {
+        return bottomId;
     }
 
-    public void setBottom(String bottom) {
-        this.bottom = bottom;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {

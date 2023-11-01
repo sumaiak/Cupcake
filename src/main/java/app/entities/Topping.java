@@ -2,12 +2,12 @@ package app.entities;
 
 public class Topping {
     int topID;
-    String topping;
+    String name;
     int price;
 
-    public Topping(int topID, String topping, int price) {
+    public Topping(int topID, String name, int price) {
         this.topID = topID;
-        this.topping = topping;
+        this.name = name;
         this.price = price;
     }
 
@@ -19,12 +19,12 @@ public class Topping {
         this.topID = topID;
     }
 
-    public String getTopping() {
-        return topping;
+    public String getName() {
+        return name;
     }
 
-    public void setTopping(String topping) {
-        this.topping = topping;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPrice() {

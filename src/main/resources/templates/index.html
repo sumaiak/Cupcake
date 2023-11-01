@@ -1,90 +1,76 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Cupcake</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Cupcake</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<header>
-    <a href="index.html" class ="logo">Cupcake </a>
+<div>
+    <header>
+        <a href="index.html" class="logo">Cupcake</a>
 
-       <nav class = "navigation">
+        <nav class="navigation" th th:method="post">
+            <a href="/login">Login</a>
+            <a href="/createuser">Sign up</a>
+            <a href="#contact">Contact</a>
 
-                   <a href="login.html">Login</a>
-                   <a href="createuser.html">Sign up</a>
-                   <a href="#contact">Contact</a>
-               <span th:if="${#ctx.session.cart != null}" th:text="${' (' + #ctx.session.cart.cartsize + ')'}">0</span>
-                   <a href=""><i class="fa fa-shopping-cart"></i></a>
+                <a href="/cart">
 
-
-
-       </nav>
-
-</header>
-
-
-<img src="../../berry-glazing_1098-15023.jpg" height="500" width="100%"/>
-<div id="content">
-    <h1>Welcome to <span id = f> Olsker </span>  Cupcake </h1>
-<section class = "par">
-    <p>
-
-    </p>
-
-
-
-</section>
-    <form id="dropdowns" action="/cart" method="post">
-        <select name="bottom" id="bottom">
-            <option value="1">Chocolate 5kr </option>
-            <option value="2">Vanilla 5kr</option>
-            <option value="3">Nutmeg 5kr</option>
-            <option value="4">Pistacio 6kr</option>
-            <option value="5">Almond 7 kr</option>
-
-
-
-        </select>
-        <select name="top" id="top" th:>
-            <option value="1">Chocolate 5kr</option>
-            <option value="2">Blueberry 5kr</option>
-            <option value="3">Rasberry 5kr</option>
-            <option value="4">Crispy 6kr</option>
-            <option value="5">Strawberry 6kr</option>
-            <option value="6">Rum/Raisin 7kr</option>
-            <option value="7">Orange 8kr</option>
-            <option value="8">Lemon 8kr</option>
-            <option value="9">Blue cheese 9kr</option>
-
-
-        </select>
-        <select name="antal" id="antal">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">2</option>
-
-
-
-        </select>
-        <button type="submit"> Læg i kurv</button>
-    </form>
-<footer>
-    <section id="contact">
-        <p>Customer Service info</p><br>
-        <p>Email : skdk1295@gmail.com</p><br>
-        <p>Phone Number:4562134 </p>
-
-    </section>
-
-</footer>
-
+                <span  id = "baskets" th:if="${#ctx.session.cart != null}" th:text="${  #ctx.session.cart.cartsize }">0
+                </span>
+                </a>
+<div id = "cart"><i class="fa fa-shopping-basket" style="font-size:18px"></i>
 </div>
 
+        </nav>
+    </header>
+
+    <div class="image">
+        <img src="../public/css/berry-glazing_1098-15023.jpg" th:src="@{/css/berry-glazing_1098-15023.jpg}"/>
+    </div>
+
+    <div class="content">
+        <h1>Welcome to <span id="f">Olsker</span>  Cupcake </h1>
+        <section class="par">
+            <p>
+
+            </p>
+        </section>
+
+        <div class = "content-box">
+            <form id="dropdowns"  action="/cart" method="post">
+                <label for="bottomDropdown">Select Bottom:</label>
+                <select id="bottomDropdown" name="bottoms">
+                    <option th:each="bottom : ${session.bottoms}" th:value="${bottom.bottomid}" th:text="${bottom.name + ' (' + bottom.price + ' kr.)'}"></option>
+                </select>
+                <br>
+
+                <label for="toppingDropdown">Select Topping:</label>
+                <select id="toppingDropdown" name="toppings">
+                    <option th:each="topping : ${session.toppings}" th:value="${topping.topid}" th:text="${topping.name + ' (' + topping.price + ' kr.)'}"></option>
+                </select>
+                <label for="quantity">Select number of cupcakes:</label>
+                <input type="number" id="quantity" name="quantity" min="2" th:value="${session.quantity}" />
+
+
+
+                <br>
+                <button id="buttonsstyle" type="submit">Add to Cart</button>
+            </form>
+        </div>
+
+
+    </div>
+    <footer>
+        <section id="contact">
+            <p>Customer Service info</p><br>
+            <p>Email : skdk1295@gmail.com</p><br>
+            <p>Phone Number:4562134 </p>
+        </section>
+    </footer>
+</div>
 </body>
 </html>

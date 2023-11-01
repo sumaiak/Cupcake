@@ -26,11 +26,25 @@ header{
     margin : 10px;
     color:hotpink;
 }
+.navigation a:hover{
+    opacity: .5;
+    color:deeppink;
+
+}
+
 h1 {
     font-size: 3rem;
     color: pink;
     text-align: center;
     font-style: italic;
+}
+
+.image img{
+    width: 100%;
+    height :500px;
+
+
+
 }
 #f{
     font-style: italic;
@@ -40,60 +54,151 @@ h1 {
 
 
 
-#nav{
-    padding: 10px;
-    font-size: 1.5rem;
-    background-color: darkturquoise;
-}
 
-#main-menu{
-    list-style: none;
+
+.content {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    gap: 20px;
+    margin-bottom: 20px;
 
 }
-#content{
-    padding: 20px;
-    min-height: 100vh;
+.fa-shopping-basket{
+    color: hotpink ;
+    margin:10px;
+
 }
+.content-box {
+    padding: 50px 20px;
+    /*height: 300px;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    border: 2px solid pink;
+    box-shadow: 5px 4px 7px 0px pink;
+}
+
 
 /* Flex style of dropdowns */
 #dropdowns{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
+    align-items: stretch;
+    width: 65%;
+    padding-top: 10px;
 }
-@media screen and (max-width: 640px) {
-    #dropdowns{
-        flex-direction: column;
-    }
+
+#dropdowns label{
+    font-size: 18px;
 
 }
+
+#dropdowns option{
+    font-size: 15px;
+
+}
+#buttonsstyle{
+
+    color:white;
+    border-radius: 25px;
+    border:none;
+    width: 350px;
+    align-self: center;
+    height:35px;
+    background:pink;
+
+}
+
 
 #dropdowns select, #dropdowns button{
-    font-size: 1.5rem;
+    font-size: 15px;
     padding: 5px;
     flex-grow: 1;
+    margin-bottom: 15px;
+}
+
+#dropdowns select:focus-visible {
+    border-color: pink;
+}
+
+#dropdowns select:focus {
+    border-color: pink;
 }
 /* CSS for styling the footer */
 footer {
 
     bottom: 0;
     right: 0;
-    background-color: #f8f8f8;
-    padding: 20px;
+    background-color: pink;
 
 }
 
 /* Style for the contact section inside the footer */
 #contact {
     text-align: right;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
+    padding: 20px;
+    color: white;
 }
 
 
 /*Text styles */
 
+/*login page style*/
 
+.form-page {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
+.form-page input {
+    width: 250px;
+    height: 25px;
+    padding: 5px;
+    border: 2px solid pink;
+    border-radius: 5px;
+}
+.login_button {
+    color:white;
+    border-radius: 25px;
+    border:none;
+    width: 250px;
+    align-self: center;
+    height:35px;
+    background:pink;
+    margin-top: 15px;
+}
+.link-login {
+    text-decoration: none;
+    align-self: center;
+    margin-top: -10px;
+    font-size: 14px;
+    color: black;
+
+}
+#cart {
+    position: fixed;
+    top: 5px;
+    right: 10.8px;
+}
+#imageuser {
+    width: 100%;
+    height: 500px;
+
+}
+#imagelogin{
+    width: 100%;
+    height: 500px;
+}
+#dropdowns label{
+    font-size: 15px;
+}
+#dropdowns input{
+    padding: 5px;
+}

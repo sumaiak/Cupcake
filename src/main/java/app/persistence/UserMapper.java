@@ -12,17 +12,18 @@ import java.util.List;
 
 public class UserMapper {
     public static User login(String username, String password,ConnectionPool connectionPool) throws DatabaseException{
-        String sql = "select * from \"user\" where username = ? and password = ?";
+        String sql = "select * from \"Users\" where username = ? and password = ?";
 
         try (Connection connection = connectionPool.getConnection()) {
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                System.out.println(ps);
                 ps.setString(1, username);
                 ps.setString(2, password);
 
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    int id = rs.getInt("id");
+                    int id = rs.getInt("user_id");
                     return new User(id, username, password);
                 }else{
                     throw new DatabaseException("Error - could not login. Try again");
@@ -51,6 +52,7 @@ public class UserMapper {
                     int balance = rs.getInt("balance");
                     String role = rs.getString("role");
 
+
                     User user = new User(id,name,userName,password,balance,role);
                     userList.add(user);
                 }
@@ -65,14 +67,20 @@ public class UserMapper {
     }
     public static void createuser(String name,String username, String password, ConnectionPool connectionPool) throws DatabaseException{
 
-        String sql = "insert into \"user\" (name,username, password) values(?,?,?)";
+        String sql = "insert into \"Users\" (name,username, password,balance) values(?,?,?,?)";
+
+
 
         try (Connection connection = connectionPool.getConnection()){
             try(PreparedStatement ps = connection.prepareStatement(sql)){
 
+                int balance = 200;
                 ps.setString(1, name);
                 ps.setString(2,username);
                 ps.setString(3, password);
+                ps.setInt(4, balance);
+
+
 
                 //her benyttes update fordi en tabel skal opdateres. i dette tilfælde opdateres tabellen med en ny bruger
                 // ps.executeUpdate();  <-- der retuneres et integer
@@ -89,6 +97,8 @@ public class UserMapper {
             }
         } catch (SQLException e) {
             String msg = "Error, could not create an account. Try again";
+            System.out.println(e);
+
 
             if(e.getMessage().startsWith("ERROR: duplicate key value")){
                 msg = "The username is already used. Try another username";

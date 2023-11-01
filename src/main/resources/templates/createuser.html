@@ -9,23 +9,28 @@
 </head>
 
 <body>
-<img src="../../berry-glazing_1098-15023.jpg" height="500" width="100%"/>
+<img  id = "imageuser" src="../public/css/berry-glazing_1098-15023.jpg" th:src="@{/css/berry-glazing_1098-15023.jpg}"/>
+<div class="content">
 
-<
-    </div>
+
+<div class="content-box">
     <h1>Create user</h1>
-    <form id="form" method="post" action="index.html ">
+    <form class="form-page" id="form-create" method="post" >
         <h3>Fill the form</h3>
         <input type="text" name ="name"  placeholder="name" /><br>
         <input type="text" name="username" placeholder="username"/><br>
         <input type="password" name="password1" placeholder="password"/><br>
         <input type="password" name="password2" placeholder="re-enter password"/><br>
-        <button id="login_button" type="submit" >Create user</button>
+        <button class="login_button" type="submit"  formaction="/createuser">Create user</button>
+        <a href="/login" class="link-login" >You have account? login</a>
         <br>
-        <p class="errormessage" th:text="${#ctx.message}"></p>
+
+        <p class="message" th:text="${#ctx.message}"></p>
+
     </form>
-    <a href="index.html" class="button">Return to main page</a>
+</div>
 </div>
 
 </body>
+
 </html>

@@ -1,10 +1,7 @@
 package app.persistence;
 
 import app.Exception.DatabaseException;
-import app.entities.Cart;
-import app.entities.Order;
-import app.entities.OrderLine;
-import app.entities.User;
+import app.entities.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -48,10 +45,10 @@ public class OrderMapper {
         }
     }
 
-    public static List<OrderLine> getAllOrdersPerUser(int order_id, ConnectionPool connectionPool) throws DatabaseException {
+    public static List<Order> getAllOrdersPerUser(int order_id, ConnectionPool connectionPool) throws DatabaseException {
 
-        List<OrderLine> OrderList = new ArrayList<>();
-        String sql = "SELECT * FROM orderline WHERE orders.user_id = ?";
+        List<Order> OrderList = new ArrayList<>();
+        String sql = "SELECT * FROM \"Orders\" WHERE orders.order_id = ?";
 
         try (Connection connection = connectionPool.getConnection()) {
             PreparedStatement ps = connection.prepareStatement(sql);
@@ -59,10 +56,12 @@ public class OrderMapper {
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     int orderid = rs.getInt("order_id");
-                    int toppings = rs.getInt("top_id");
-                    int bottoms = rs.getInt("bottom_id");
+                    int price = rs.getInt("price");
+                    String status = rs.getString("status");
+                    String date = rs.getString("date");
 
-                    OrderList.add(new OrderLine(orderid, toppings, bottoms));
+
+                    OrderList.add(new Order(order_id,price,status,date));
                 }
             }
         } catch (SQLException e) {
@@ -78,6 +77,7 @@ public class OrderMapper {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, bottom_id);
             ps.setInt(2, top_id);
+
 
             int rowsaffected = ps.executeUpdate();
 
@@ -108,44 +108,47 @@ public class OrderMapper {
     }
 
 
-    public static void selectingToppingAndBottom(Cart cart,int topping, int bottom, int price, ConnectionPool connectionPool) {
-        String bottomSQL = "SELECT bottom_id, price FROM Bottom WHERE bottom_id = ?";
-        String toppingSQL = "SELECT top_id, price FROM Toppings WHERE top_id = ?";
+    public static List<Bottom> bottoms( ConnectionPool connectionPool) throws DatabaseException {
+        String bottomSQL = "SELECT buttom_id, bottom, price FROM \"Bottom\"";
+        List<Bottom> bottoms = new ArrayList<>();
 
         try (Connection connection = connectionPool.getConnection()) {
             PreparedStatement bottomPS = connection.prepareStatement(bottomSQL);
-            bottomPS.setInt(1, bottom);
             ResultSet bottomResult = bottomPS.executeQuery();
 
-            if (bottomResult.next()) {
-                int bottomId = bottomResult.getInt("bottom_id");
-                int bottomPrice = bottomResult.getInt("price");
-
-                System.out.println("Selected Bottom: ID = " + bottomId + ", Price = " + bottomPrice);
-
-
-
+            while (bottomResult.next()) {
+                int bottomIds = bottomResult.getInt("buttom_id");
+                String bottom1 = bottomResult.getString("bottom");
+                int price = bottomResult.getInt("price");
+                bottoms.add(new Bottom(bottomIds, bottom1, price));
             }
-
-            PreparedStatement toppingPS = connection.prepareStatement(toppingSQL);
-            toppingPS.setInt(1, topping);
-            ResultSet toppingResult = toppingPS.executeQuery();
-
-            if (toppingResult.next()) {
-                int topId = toppingResult.getInt("top_id");
-                double topPrice = toppingResult.getDouble("price");
-
-                System.out.println("Selected Topping: ID = " + topId + ", Price = " + topPrice);
-
-                Cart.addItem("Topping", topId, topPrice);
-            }
-
-            // Add the total price of the selected items to the cart
-            Cart.addTotalPrice(price);
-
-            // Assuming you have a method to display the cart contents
-            Cart.displayCart();
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception properly in your application
+            throw new DatabaseException(e.getMessage());
+
         }
+
+        return bottoms;
     }
+
+    public static List<Topping> toppings(ConnectionPool connectionPool) throws DatabaseException {
+        String toppingSQL = "SELECT top_id, toppings, price FROM \"Toppings\"";
+        List<Topping> toppings = new ArrayList<>();
+
+        try (Connection connection = connectionPool.getConnection()) {
+            PreparedStatement topPS = connection.prepareStatement(toppingSQL);
+
+            ResultSet toppingResult = topPS.executeQuery();
+
+            while (toppingResult.next()) {
+                int toppingId = toppingResult.getInt("top_id");
+                String toppingName = toppingResult.getString("toppings");
+                int price = toppingResult.getInt("price");
+                toppings.add(new Topping(toppingId, toppingName, price));
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Couldn't upload the toppings from database");
+        }
+
+        return toppings;
+    }
+}
