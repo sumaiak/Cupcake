@@ -202,3 +202,6 @@ footer {
 #dropdowns input{
     padding: 5px;
 }
+table, th, td {
+    border: 1px solid;
+}

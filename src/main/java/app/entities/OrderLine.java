@@ -16,6 +16,8 @@ public class OrderLine {
 
 
 
+
+
     public OrderLine(int bottomId, int toppingId, int quantity) {
 
         this.quantity = quantity;
@@ -27,6 +29,9 @@ public class OrderLine {
         this.bottomId = bottomId;
         this.toppingId = toppingId;
     }
+
+
+
 
     public int getQuantity() {
         return quantity;

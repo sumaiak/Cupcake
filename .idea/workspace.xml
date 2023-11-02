@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="241dd27b-af7f-4958-aa9a-e29faa255d80" name="Changes" comment="OrderLine">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/3104047a-f0cb-488d-a21f-4938514c7a9c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3104047a-f0cb-488d-a21f-4938514c7a9c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/entities/OrderLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/entities/OrderLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/cart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +120,7 @@
       <workItem from="1698659251598" duration="13708000" />
       <workItem from="1698741615380" duration="26070000" />
       <workItem from="1698829791852" duration="2691000" />
+      <workItem from="1698921282566" duration="3158000" />
     </task>
     <task id="LOCAL-00001" summary="userstory2">
       <option name="closed" value="true" />
